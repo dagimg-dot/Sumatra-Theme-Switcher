@@ -23,9 +23,9 @@ int main()
     fstream file;
     string ind_file_data;
     vector<string> file_data;
-    // file.open(BASE_DIR + "\\" + FILE_NAME);
+    file.open(BASE_DIR + "\\" + FILE_NAME);
 
-    file.open("SumatraPDF-settings.txt");
+    // file.open("SumatraPDF-settings.txt");
 
     if (file.fail())
     {
@@ -65,8 +65,8 @@ void colorChange(string color)
 {
     fstream file;
     string line;
-    // file.open(BASE_DIR + "\\" + FILE_NAME);
-    file.open("SumatraPDF-settings.txt");
+    file.open(BASE_DIR + "\\" + FILE_NAME);
+    // file.open("SumatraPDF-settings.txt");
     int i = 1;
     while (!file.eof())
     {
