@@ -15,6 +15,7 @@ const string DARK = "TextColor = #eeeeee\nBackgroundColor = #111111";
 const string LIGHT = "TextColor = #000000\nBackgroundColor = #ffffff  ";
 
 Theme getCurrentTheme(string line);
+void toggleTheme(Theme currentTheme);
 
 int main()
 {
@@ -45,6 +46,7 @@ int main()
     file.close();
 
     Theme currentTheme = getCurrentTheme(file_data[10]);
+    toggleTheme(currentTheme);
 
     return 0;
 }
@@ -56,4 +58,19 @@ Theme getCurrentTheme(string line)
         return Theme::Dark;
     }
     return Theme::Light;
+}
+
+void toggleTheme(Theme currentTheme)
+{
+
+    if (currentTheme == Theme::Dark)
+    {
+    }
+    else if (currentTheme == Theme::Light)
+    {
+    }
+    else
+    {
+        exit(0);
+    }
 }
