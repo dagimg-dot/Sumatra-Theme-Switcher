@@ -16,6 +16,7 @@ const string LIGHT = "TextColor = #000000\nBackgroundColor = #ffffff  ";
 
 Theme getCurrentTheme(string line);
 void toggleTheme(Theme currentTheme);
+void colorChange(string color);
 
 int main()
 {
@@ -60,14 +61,37 @@ Theme getCurrentTheme(string line)
     return Theme::Light;
 }
 
+void colorChange(string color)
+{
+    fstream file;
+    string line;
+    // file.open(BASE_DIR + "\\" + FILE_NAME);
+    file.open("SumatraPDF-settings.txt");
+    int i = 1;
+    while (!file.eof())
+    {
+        if (i > 9)
+        {
+            file.seekp(243);
+            file << endl;
+            file << color;
+            break;
+        }
+        i++;
+    }
+    file.close();
+}
+
 void toggleTheme(Theme currentTheme)
 {
 
     if (currentTheme == Theme::Dark)
     {
+        colorChange(LIGHT);
     }
     else if (currentTheme == Theme::Light)
     {
+        colorChange(DARK);
     }
     else
     {
