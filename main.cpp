@@ -42,6 +42,8 @@ int main()
         i++;
     }
 
+    file.close();
+
     Theme currentTheme = getCurrentTheme(file_data[10]);
 
     return 0;
