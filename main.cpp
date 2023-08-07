@@ -1,8 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-
 using namespace std;
+
+enum Theme
+{
+    Dark,
+    Light
+};
 
 const string BASE_DIR = "C:\\Users\\Admin\\AppData\\Local\\SumatraPDF";
 const string FILE_NAME = "SumatraPDF-settings.txt";
